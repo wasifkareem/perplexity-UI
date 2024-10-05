@@ -1,0 +1,45 @@
+#root {
+  background-color: #f3f3ee;
+
+  @media (min-width: 768px) {
+    padding-left: 225px;
+  }
+}
+.svg-icon {
+  width: 50px; /* Set desired width */
+  height: auto; /* Maintain aspect ratio */
+  transition: color 0.3s ease; /* Smooth transition */
+  color: black; /* Default color */
+}
+
+.icon-container:hover .svg-icon {
+  color: red; /* Color on hover */
+}
+.li-element {
+  mask-image: linear-gradient(to right, black 85%, transparent 97%);
+  transition: mask-image 200ms ease, -webkit-mask-image 200ms ease;
+  word-spacing: 1px;
+}
+
+.li-element:hover {
+  mask-image: linear-gradient(
+    to right,
+    black 60%,
+    transparent 85%
+  ); /* Increase shadow significantly */
+  -webkit-mask-image: linear-gradient(to right, black 60%, transparent 85%);
+}
+
+.li-icon {
+  animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: gainsboro;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
