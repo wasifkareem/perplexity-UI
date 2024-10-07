@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+#root {
+  background-color: #f3f3ee;
+
+  @media (min-width: 768px) {
+    padding-left: 225px;
+  }
+}
+
 @font-face {
   font-family: "grotesk";
   src: url("./font/FKGroteskNeueTrial-Light-BF6576818c0f3e8.otf")

@@ -16,6 +16,10 @@ export default {
       spacing: {
         "word-spacing": "0.25em", // You can adjust the value as needed
       },
+      scale: {
+        101: "1.01",
+        102: "1.02",
+      },
     },
   },
   plugins: [],

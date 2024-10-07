@@ -1,10 +1,3 @@
-#root {
-  background-color: #f3f3ee;
-
-  @media (min-width: 768px) {
-    padding-left: 225px;
-  }
-}
 .svg-icon {
   width: 50px; /* Set desired width */
   height: auto; /* Maintain aspect ratio */
@@ -42,4 +35,57 @@
 
 .no-scrollbar::-webkit-scrollbar {
   display: none;
+}
+
+.matrix-fade {
+  mask-image: linear-gradient(to bottom, black, rgba(0, 0, 0, 0));
+}
+
+.article-ref {
+  background-color: #e8e8e3;
+  border-radius: 100%;
+  padding: 3px 6px;
+  margin: 3px;
+  font-size: 8px;
+}
+
+.overlapped {
+  margin-right: -9px; /* Negative margin for overlap */
+  background-color: white;
+  padding: 2px;
+  border: 1px;
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 0) 95%
+  );
+}
+.overlapped:hover {
+  margin-right: 9px;
+}
+.is-current {
+  font-weight: bold;
+  color: oklch(0.304 0.04 213.681);
+  border-left: 2px solid oklch(0.304 0.04 213.681);
+  transition: all 0.3s ease-in-out; /* Add transition for all properties */
+}
+
+.scrollbox li {
+  list-style: none;
+  margin-bottom: 8px;
+}
+
+.scrollbox {
+  position: fixed;
+  top: 50px;
+}
+
+.sources-custom:hover {
+  mask-image: linear-gradient(
+    to right,
+    rgb(0, 0, 0) 0%,
+    rgb(0, 0, 0) 80%,
+    rgba(0, 0, 0, 0) 95%
+  );
 }

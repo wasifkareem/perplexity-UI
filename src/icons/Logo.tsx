@@ -4,7 +4,7 @@ const Logo = () => {
       width="1588"
       viewBox="0 0 1588 400"
       className="w-36"
-      fill="none"
+      fill="currentColor"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
