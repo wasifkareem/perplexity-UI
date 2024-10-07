@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { blog_data } from "../data/data";
 import { useWindowDimensions } from "../utils/dimensions";
 import Eye from "../icons/Eye";
+import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 
 const CardSlider = () => {
   const sliderRef = useRef<HTMLDivElement | null>(null);
@@ -9,9 +10,8 @@ const CardSlider = () => {
 
   const scrollLeft = () => {
     if (sliderRef.current) {
-      // Check if sliderRef.current is not null
       sliderRef.current.scrollBy({
-        left: -400, // adjust based on card width
+        left: -400,
         behavior: "smooth",
       });
     }
@@ -19,23 +19,21 @@ const CardSlider = () => {
 
   const scrollRight = () => {
     if (sliderRef.current) {
-      // Check if sliderRef.current is not null
       sliderRef.current.scrollBy({
-        left: 400, // adjust based on card width
+        left: 400,
         behavior: "smooth",
       });
     }
   };
 
   return (
-    <div className=" relative w-full max-w-6xl mx-auto mb-40">
-      {/* Arrow for sliding left */}
+    <div className=" relative w-full max-w-6xl  mb-40">
       {width < 1280 && (
         <button
-          className="absolute left-0 top-1/2 text-2xl -translate-y-1/2 bg-gray-200 p-2 w-12 rounded-full z-10 "
+          className="absolute left-0 top-1/2 text-2xl -translate-y-1/2 bg-gray-200 p-2  py-[9px] rounded-full z-10 "
           onClick={scrollLeft}
         >
-          ←
+          <FaArrowLeftLong className=" text-light" />
         </button>
       )}
 
@@ -68,13 +66,12 @@ const CardSlider = () => {
         ))}
       </div>
 
-      {/* Arrow for sliding right */}
       {width < 1280 && (
         <button
-          className="absolute text-2xl right-0 top-1/2 -translate-y-1/2 bg-gray-200 p-2 w-12 rounded-full z-10 "
+          className="absolute text-2xl right-0 top-1/2 -translate-y-1/2 bg-gray-200 p-2  py-[9px] rounded-full z-10 "
           onClick={scrollRight}
         >
-          →
+          <FaArrowRightLong className=" text-light" />
         </button>
       )}
     </div>
