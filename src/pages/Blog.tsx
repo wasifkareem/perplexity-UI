@@ -126,7 +126,7 @@ const Blog = () => {
                     <div className="flex gap-2 items-center md:mb-2">
                       <img
                         className="w-5 md:w-9 rounded-full"
-                        src="src/assets/elymc.avif"
+                        src="/assets/elymc.avif"
                         alt="author-img"
                       />
                       <div>
