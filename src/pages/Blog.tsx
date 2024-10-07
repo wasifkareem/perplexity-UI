@@ -267,7 +267,7 @@ const Blog = () => {
                       <div className=" font-[500] leading-normal text-dark">
                         {section?.img && (
                           <img
-                            className=" ml-7 float-end h-44 rounded-lg scale-100 hover:scale-105 transition-all "
+                            className=" ml-7 mb-3 md:float-end h-44 rounded-lg scale-100 hover:scale-105 transition-all "
                             src={section?.img}
                             alt="ref-img"
                           />
