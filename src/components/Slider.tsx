@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { blog_data } from "../data/data";
 import { useWindowDimensions } from "../utils/dimensions";
 import Eye from "../icons/Eye";
