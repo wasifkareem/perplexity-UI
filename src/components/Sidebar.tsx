@@ -110,7 +110,7 @@ const Sidebar = () => {
             <div className=" flex flex-row gap-2 text-light transition-all hover:bg-[#E8E8E3] items-center rounded-full p-[5px]">
               <img
                 className=" h-8 rounded-full"
-                src="src/assets/wasif dp.jpeg"
+                src="/assets/wasif dp.jpeg"
                 alt="profile-photo"
               />
               <p className=" text-sm font-semibold  text-dark">

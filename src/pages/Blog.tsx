@@ -107,7 +107,7 @@ const Blog = () => {
           <div className=" w-full flex flex-col items-center py-5 xl:max-w-[1100px]">
             <img
               className=" object-cover md:object-bottom md:w-[92%] transform scale-100 hover:scale-102 transition-transform duration-200 w-[96%] h-56 md:h-[330px] rounded-lg"
-              src="src/assets/quantum.png"
+              src="/assets/quantum.png"
               alt="main-img"
             />
 

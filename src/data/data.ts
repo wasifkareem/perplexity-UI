@@ -18,12 +18,12 @@ export const libData = [
 
 export const blog_data = [
   {
-    img: "src/assets/quantum.png",
+    img: "/assets/quantum.png",
     title: "Quantum Computer Doom Challenge",
     desc: "According to PC Gamer, the quantum computer adaptation of the iconic game DOOM, known as Quandoom, faces significant technical challenges due to its requirement for 72,376 qubits and 80 million quantum gates, far exceeding the capabilities of today's most advanced quantum computers.",
     author: {
       name: "elymc",
-      img: "src/assets/elymc.avif",
+      img: "/assets/elymc.avif",
     },
     viewed: "23,422",
   },
@@ -33,27 +33,27 @@ export const blog_data = [
     desc: "he McLaren W1, successor to the legendary P1, is a groundbreaking hybrid hypercar that pushes the boundaries of automotive engineering with its 1,258-horsepower powertrain, advanced aerodynamics, and Formula 1-inspired technology. As reported by Car and Driver, this plug-in hybrid marvel comb",
     author: {
       name: "elymc",
-      img: "src/assets/elymc.avif",
+      img: "/assets/elymc.avif",
     },
     viewed: "67,235",
   },
   {
-    img: "src/assets/aiphoto.gif",
+    img: "/assets/aiphoto.gif",
     title: " AI Sees Faces in Objects, Too",
     desc: "Recent research from MIT, awaiting peer review, reveals that artificial intelligence can now recognize faces in inanimate objects, a phenomenon known as pareidolia, opening new avenues for understanding both machine learning and human cognition. This capability, while initially challenging for AI,",
     author: {
       name: "elymc",
-      img: "src/assets/elymc.avif",
+      img: "/assets/elymc.avif",
     },
     viewed: "11,230",
   },
   {
-    img: "src/assets/floyd.jpg",
+    img: "/assets/floyd.jpg",
     title: "Cult of Lloyd McKenzie",
     desc: "According to PC Gamer, the quantum computer adaptation of the iconic game DOOM, known as Quandoom, faces significant technical challenges due to its requirement for 72,376 qubits and 80 million quantum gates, far exceeding the capabilities of today's most advanced quantum computers.",
     author: {
       name: "elymc",
-      img: "src/assets/elymc.avif",
+      img: "/assets/elymc.avif",
     },
     viewed: "11,235",
   },
@@ -63,7 +63,7 @@ export const blog_data = [
     desc: "Based on reports from Nature, a retrofitted U-2 spy plane has revealed that most tropical thunderstorms are radioactive, producing various forms of gamma radiation far more frequently than previously t",
     author: {
       name: "elymc",
-      img: "src/assets/elymc.avif",
+      img: "/assets/elymc.avif",
     },
     viewed: "99,235",
   },
@@ -73,7 +73,7 @@ export const article_sections = [
   {
     id: "section-1",
     heading: "Quandoom Technical Challenges",
-    img: "src/assets/atom.jpeg",
+    img: "/assets/atom.jpeg",
     text: `
       <p>Quandoom, the quantum computer port of DOOM, presents
       significant technical challenges that push the boundaries of
