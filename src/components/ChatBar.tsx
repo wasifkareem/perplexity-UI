@@ -11,9 +11,9 @@ const ChatBar = () => {
   return (
     <div className="sticky   bottom-20  md:bottom-10 ">
       <div className="grid grid-cols-12">
-        <div className="col-span-12 md:col-span-8  bg-[#F3F3EE] p-2 rounded-full  flex justify-center">
+        <div className="  col-span-12 md:col-span-8  bg-[#F3F3EE] p-2 rounded-full  flex justify-center">
           {/* Chatbar */}
-          <div className=" cursor-pointer w-full md:w-[675px]  flex justify-between py-3 items-center px-3 border border-gray-300 rounded-full bg-white">
+          <div className="  cursor-pointer w-full md:w-[675px]  flex justify-between py-3 items-center px-3 border border-gray-300 rounded-full bg-white">
             <div className="text-[#64645F] mx-3 font-[500]">Ask follow-up</div>
             <div className="flex gap-2 items-center">
               <span className="flex items-center">

@@ -30,7 +30,7 @@ const CardSlider = () => {
     <div className=" relative w-full max-w-6xl  mb-40">
       {width < 1280 && (
         <button
-          className="absolute left-0 top-1/2 text-2xl -translate-y-1/2 bg-gray-200 p-2  py-[9px] rounded-full z-10 "
+          className="absolute left-0 top-1/2 text-2xl -translate-y-1/2 bg-gray-200 p-2  py-[9px] rounded-full  "
           onClick={scrollLeft}
         >
           <FaArrowLeftLong className=" text-light" />
@@ -68,7 +68,7 @@ const CardSlider = () => {
 
       {width < 1280 && (
         <button
-          className="absolute text-2xl right-0 top-1/2 -translate-y-1/2 bg-gray-200 p-2  py-[9px] rounded-full z-10 "
+          className="absolute text-2xl right-0 top-1/2 -translate-y-1/2 bg-gray-200 p-2  py-[9px] rounded-full "
           onClick={scrollRight}
         >
           <FaArrowRightLong className=" text-light" />
