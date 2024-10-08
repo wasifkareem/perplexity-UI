@@ -13,7 +13,6 @@ import Copy from "../icons/Copy";
 import Scrollspy from "react-scrollspy";
 import { article_related, blog_data } from "../data/data";
 import RelatedIcon from "../icons/RelatedIcon";
-import Slider from "../components/KeepReading";
 import Read from "../icons/Read";
 import BottomNav from "../components/BottomNav";
 import ChatBar from "../components/ChatBar";

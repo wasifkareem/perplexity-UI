@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import { blog_data } from "../data/data";
 import Bookmark from "../icons/Bookmark";
@@ -20,11 +20,6 @@ const navItems = [
 ];
 const Discover = () => {
   const { width } = useWindowDimensions();
-  const navigate = useNavigate();
-
-  const handleClick = () => {
-    navigate("/article");
-  };
 
   return (
     <>
