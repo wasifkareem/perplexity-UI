@@ -11,19 +11,27 @@ import Fork from "../icons/Fork";
 import Copy from "../icons/Copy";
 // @ts-expect-error: package not maintained anymore
 import Scrollspy from "react-scrollspy";
-import { article_related, article_sections } from "../data/data";
+import { article_related, blog_data } from "../data/data";
 import RelatedIcon from "../icons/RelatedIcon";
-import Slider from "../components/Slider";
+import Slider from "../components/KeepReading";
 import Read from "../icons/Read";
 import BottomNav from "../components/BottomNav";
 import ChatBar from "../components/ChatBar";
 import { useEffect, useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
+import KeepReading from "../components/KeepReading";
 
 const Blog = () => {
   const { width } = useWindowDimensions();
   const [isOutOfView, setIsOutOfView] = useState(false);
   const elementRef = useRef<HTMLDivElement | null>(null);
-  console.log(isOutOfView);
+  const location = useLocation();
+  const pageId = location.pathname.split("/").pop();
+  const pageData = blog_data.find((blog) => blog.id == pageId);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pageId]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -63,7 +71,7 @@ const Blog = () => {
                  : "translate-y-3 opacity-0"
              }`}
             >
-              {"Quantum Computer Doom Challenge"}
+              {pageData?.title}
             </div>
 
             <div className=" flex gap-2 mr-2">
@@ -72,14 +80,14 @@ const Blog = () => {
                 data-tooltip-content="Article actions"
                 className=" p-2"
               >
-                <img className=" h-4" src="icons/dots.svg" alt="" />
+                <img className=" h-4" src="/icons/dots.svg" alt="" />
               </button>
               <button
                 data-tooltip-id="my-tooltip"
                 data-tooltip-content="Save to Bookmarks"
                 className=" bg-[#E8E8E3] rounded p-2 md:py-[2px] md:bg-white md:border px-[10px] "
               >
-                <img className=" h-[12px]" src="icons/bookmark.svg" alt="" />
+                <img className=" h-[12px]" src="/icons/bookmark.svg" alt="" />
               </button>{" "}
               <button
                 data-tooltip-id="my-tooltip"
@@ -107,7 +115,7 @@ const Blog = () => {
           <div className=" w-full flex flex-col items-center py-5 xl:max-w-[1100px]">
             <img
               className=" object-cover md:object-bottom md:w-[92%] transform scale-100 hover:scale-102 transition-transform duration-200 w-[96%] h-56 md:h-[330px] rounded-lg"
-              src="/assets/quantum.png"
+              src={pageData?.img}
               alt="main-img"
             />
 
@@ -119,22 +127,22 @@ const Blog = () => {
                     id="main-heading"
                     className="font-[500] text-dark text-3xl md:text-5xl md:leading-[55px] "
                   >
-                    Quantum Computer Doom Challenge
+                    {pageData?.title}
                   </h1>
                   {/* STATS AND INFO */}
                   <div className="flex justify-between w-full mt-6  md:pr-7">
                     <div className="flex gap-2 items-center md:mb-2">
                       <img
                         className="w-5 md:w-9 rounded-full"
-                        src="/assets/elymc.avif"
+                        src={pageData?.author.img}
                         alt="author-img"
                       />
                       <div>
                         <p className=" md:hidden text-xs text-light font-semibold">
-                          elymc
+                          {pageData?.author.name}
                         </p>
                         <p className=" hidden md:block text-light font-[500]">
-                          Curated by elymc
+                          {` Curated by ${pageData?.author.name}`}
                         </p>
                         <p className=" hidden md:block text-xs text-light font-[500]">
                           2 min read
@@ -156,7 +164,7 @@ const Blog = () => {
                         data-tooltip-content="views"
                       >
                         <Eye />
-                        44,781
+                        {pageData?.viewed}
                       </span>
                       <span
                         className=" cursor-default flex text-xs md:text-sm gap-1 font-light items-center"
@@ -164,7 +172,7 @@ const Blog = () => {
                         data-tooltip-content="Follow-ups asked"
                       >
                         <Fork width={11} />
-                        2,232
+                        {pageData?.followup}
                       </span>
                       <Tooltip
                         style={{
@@ -185,57 +193,30 @@ const Blog = () => {
                   {/* DESCRIPTION */}
                   <div className=" my-4 text-dark font-[500]">
                     <p className=" first-letter:text-display first-letter:float-left first-letter:mr-2 first-letter:mt-xs first-letter:text-[2.75em] first-letter:font-[600] first-letter:leading-none  leading-normal">
-                      According to PC Gamer, the quantum computer adaptation of
-                      the iconic game DOOM, known as Quandoom, faces significant
-                      technical challenges due to its requirement for 72,376
-                      qubits and 80 million quantum gates, far exceeding the
-                      capabilities of today's most advanced quantum computers.
+                      {pageData?.desc}
                     </p>
                   </div>
                 </div>
 
                 <div className=" no-scrollbar whitespace-nowrap  py-3 px-4 flex flex-row gap-[10px] bg-white/90 backdrop-blur-lg border border-white/20  md:overflow-hidden overflow-x-auto">
-                  <a className=" flex flex-col justify-between text-xs gap-[5px]  px-4 md:px-3 py-2 pr-12 md:pr-0 font-semibold bg-[#F3F3EE]   min-w-80 md:min-w-40 rounded-[5px]">
-                    <p className=" text-xs text-wrap  text-dark  transition-all duration-200">
-                      'DOOM' is finally being ported to quantum computers, but
-                      there are ...
-                    </p>
-                    <span className=" flex gap-1 text-light text-xs items-center">
-                      <img
-                        className=" w-4 rounded-full"
-                        src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://gigazine.net&size=128"
-                        alt="gigazine"
-                      />
-                      gigazine . 1
-                    </span>
-                  </a>{" "}
-                  <a className=" flex flex-col justify-between text-xs gap-[5px] px-4 md:px-2 py-2 pr-12 font-semibold bg-[#F3F3EE]  min-w-80 md:min-w-40 rounded-[5px]">
-                    <p className=" text-xs text-wrap  text-dark  transition-all duration-200">
-                      DOOM can now run on a quantum computer with Quandoom port
-                    </p>
-                    <span className=" flex gap-1 text-light text-xs items-center">
-                      <img
-                        className=" w-4 rounded-full"
-                        src="https://www.google.com/s2/favicons?sz=128&domain=tomshardware.com"
-                        alt="tom"
-                      />
-                      tomshardware . 2
-                    </span>
-                  </a>{" "}
-                  <a className=" flex flex-col text-xs gap-[5px] justify-between px-4 py-2 md:pr-1 pr-12 font-semibold bg-[#F3F3EE] md:min-w-40   min-w-80 rounded-[5px]">
-                    <p className=" text-xs text-wrap  text-dark  transition-all duration-200">
-                      Doom finally ported to quantum computers, and you can play
-                      it now
-                    </p>
-                    <span className=" flex gap-1 text-light text-xs items-center">
-                      <img
-                        className=" w-4 rounded-full"
-                        src="https://www.google.com/s2/favicons?sz=128&domain=neowin.net"
-                        alt="gigazine"
-                      />
-                      neowin . 3
-                    </span>
-                  </a>
+                  {pageData?.refCards?.map((card, i) => (
+                    <a
+                      key={i}
+                      className=" flex flex-col justify-between text-xs gap-[5px]  px-4 md:px-3 py-2 pr-12 md:pr-0 font-semibold bg-[#F3F3EE]   min-w-80 md:min-w-40 rounded-[5px]"
+                    >
+                      <p className=" text-xs text-wrap md:px-2  text-dark  transition-all duration-200">
+                        {card.text}
+                      </p>
+                      <span className=" flex gap-1 text-light text-xs items-center">
+                        <img
+                          className=" w-4 rounded-full"
+                          src={card.img}
+                          alt="gigazine"
+                        />
+                        {card.name} . {i + 1}
+                      </span>
+                    </a>
+                  ))}
                   <a className=" flex flex-col justify-between text-xs gap-[5px] px-4 py-2 pr-12 font-semibold bg-[#F3F3EE]   min-w-80 md:min-w-40 rounded-[5px]">
                     <div className=" flex gap-1">
                       <img
@@ -255,7 +236,7 @@ const Blog = () => {
 
                 {/* ARTICLE SECTIONS */}
                 <div>
-                  {article_sections.map((section) => (
+                  {pageData?.sections?.map((section) => (
                     <div
                       key={section.id}
                       id={section.id}
@@ -280,21 +261,13 @@ const Blog = () => {
                         {/* SOURCES */}
                         <div className=" group p-1 border flex items-center gap-4 border-gray-300 w-32 text-nowrap rounded-full hover:bg-gray-200 transition-all duration-200 cursor-pointer">
                           <div className="flex">
-                            <img
-                              className="overlapped w-5 rounded-full transition-all duration-300 group-hover:mr-[0]"
-                              src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://gigazine.net&size=128"
-                              alt="gigazine"
-                            />
-                            <img
-                              className="overlapped w-5 rounded-full transition-all duration-300 group-hover:mr-[0]"
-                              src="https://www.google.com/s2/favicons?sz=128&domain=neowin.net"
-                              alt="neo"
-                            />
-                            <img
-                              className="overlapped w-5 rounded-full transition-all duration-300 group-hover:mr-[0]"
-                              src="https://www.google.com/s2/favicons?sz=128&domain=pcgamer.com"
-                              alt="pc-gamer"
-                            />
+                            {pageData.refCards?.map((card) => (
+                              <img
+                                className="overlapped w-5 rounded-full transition-all duration-300 group-hover:mr-[0]"
+                                src={card.img}
+                                alt={card.name}
+                              />
+                            ))}
                           </div>
                           <div className="sources-custom">
                             <span className="text-xs font-[600] text-gray-500">
@@ -340,7 +313,7 @@ const Blog = () => {
                   <span className=" p-3 items-center text-lg flex gap-2 font-semibold text-dark">
                     <Read /> Keep Reading
                   </span>
-                  <Slider />
+                  <KeepReading />
                 </div>
               </div>
               <div className=" md:col-span-4 mt-8 ml-4">
@@ -359,18 +332,11 @@ const Blog = () => {
                     <li className=" border-l-[2px] pl-3">
                       <a href="#section-0">Introduction</a>
                     </li>
-                    <li className=" border-l-[2px] pl-3">
-                      <a href="#section-1">Quandoom Technical Challenges</a>
-                    </li>
-                    <li className=" border-l-[2px] pl-3">
-                      <a href="#section-2">Simulation on Classical Computers</a>
-                    </li>
-                    <li className=" border-l-[2px] pl-3">
-                      <a href="#section-3">Unique Gameplay Features</a>
-                    </li>
-                    <li className=" border-l-[2px] pl-3">
-                      <a href="#section-4">Development Insights and Future</a>
-                    </li>
+                    {pageData?.sections?.map((sec) => (
+                      <li key={sec.id} className=" border-l-[2px] pl-3">
+                        <a href={`#${sec.id}`}>{sec.heading}</a>
+                      </li>
+                    ))}
                   </Scrollspy>
                 </div>
               </div>

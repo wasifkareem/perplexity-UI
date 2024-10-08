@@ -3,8 +3,9 @@ import { blog_data } from "../data/data";
 import { useWindowDimensions } from "../utils/dimensions";
 import Eye from "../icons/Eye";
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
-const CardSlider = () => {
+const KeepReading = () => {
   const sliderRef = useRef<HTMLDivElement | null>(null);
   const { width } = useWindowDimensions();
 
@@ -43,7 +44,8 @@ const CardSlider = () => {
         className="flex overflow-x-scroll xl:overflow-hidden no-scrollbar scrollbar-hide gap-4 md:gap-2 px-2"
       >
         {blog_data.slice(0, 4).map((blog) => (
-          <div
+          <Link
+            to={`/page/${blog.id}`}
             key={blog.title}
             className="w-72 flex flex-col  md:w-40 overflow-hidden p-1 border bg-[#F5F5F1] shadow rounded-lg flex-shrink-0"
           >
@@ -62,7 +64,7 @@ const CardSlider = () => {
               <Eye />
               {blog.viewed}
             </span>
-          </div>
+          </Link>
         ))}
       </div>
 
@@ -78,4 +80,4 @@ const CardSlider = () => {
   );
 };
 
-export default CardSlider;
+export default KeepReading;

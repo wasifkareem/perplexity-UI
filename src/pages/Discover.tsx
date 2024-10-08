@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import { blog_data } from "../data/data";
 import Bookmark from "../icons/Bookmark";
@@ -78,8 +78,8 @@ const Discover = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mx-4 mb-24">
                 {/* ARTICLES */}
                 {blog_data.map((blog, index) => (
-                  <div
-                    onClick={handleClick}
+                  <Link
+                    to={`page/${blog.id}`}
                     key={index}
                     className={`cursor-pointer col-span-1 ${
                       index === 0 || index === 4 ? "md:col-span-3" : ""
@@ -145,7 +145,7 @@ const Discover = () => {
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 ))}
               </div>
             </div>

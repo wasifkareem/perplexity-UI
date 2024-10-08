@@ -14,7 +14,7 @@ function App() {
         </span>
         <Routes>
           <Route path="/" element={<Discover />} />
-          <Route path="/article" element={<Blog />} />
+          <Route path="/page/:id" element={<Blog />} />
         </Routes>
       </BrowserRouter>
     </>
